@@ -5,6 +5,9 @@
 <style type="text/css">
 .t1 td {
         border: 1px solid black;
+        width: 75px;
+        height: 10px;
+        text-align:center; 
        }  
 .d1 {
      border: 1px solid orange;
@@ -19,38 +22,38 @@
 
 <table>
  <tr>
-  <td><input type=button value="Button 11"></td>
-  <td><input type=button value="Button 12"></td>
-  <td><input type=button value="Button 13"></td>
+  <td onClick="document.getElementById('td11').style.display='table-cell';"><input type=button value="Button 11"></td>
+  <td onClick="document.getElementById('td12').style.display='table-cell';"><input type=button value="Button 12"></td>
+  <td onClick="document.getElementById('td13').style.display='table-cell';"><input type=button value="Button 13"></td>
  </tr>
  <tr>
-  <td><input type=button value="Button 21"></td>
-  <td onClick="document.getElementById('td22').style.display='inline';"><input type=button value="Button 22"></td>
-  <td><input type=button value="Button 23"></td>
+  <td onClick="document.getElementById('td21').style.display='table-cell';"><input type=button value="Button 21"></td>
+  <td onClick="document.getElementById('td22').style.display='table-cell';"><input type=button value="Button 22"></td>
+  <td onClick="document.getElementById('td23').style.display='table-cell';"><input type=button value="Button 23"></td>
  </tr>
  <tr>
-  <td><input type=button value="Button 31"></td>
-  <td><input type=button value="Button 32"></td>
-  <td><input type=button value="Button 33"></td>
+  <td onClick="document.getElementById('td31').style.display='table-cell';"><input type=button value="Button 31"></td>
+  <td onClick="document.getElementById('td32').style.display='table-cell';"><input type=button value="Button 32"></td>
+  <td onClick="document.getElementById('td33').style.display='table-cell';"><input type=button value="Button 33"></td>
  </tr>
 </table>
 <br>
 <br>
 <table class="t1">
  <tr>
-  <td id="td11"  >Some text 11</td>
-  <td>Some text 12</td>
-  <td>Some text 13</td>
+  <td id="td11" onClick="this.style.display='none';">11</td>
+  <td id="td12" onClick="this.style.display='none';">12</td>
+  <td id="td13" onClick="this.style.display='none';">13</td>
  </tr>
  <tr>
-  <td>Some text 21</td>
-  <td id="td22" onClick="this.style.display='none';">Some text 22</td>
-  <td>Some text 23</td>
+  <td id="td21" onClick="this.style.display='none';">21</td>
+  <td id="td22" onClick="this.style.display='none';">22</td>
+  <td id="td23" onClick="this.style.display='none';">23</td>
  </tr>
  <tr>
-  <td>Some text 31</td>
-  <td id="td32" onMouseOver="document.getElementById('div1').innerHTML = this.innerHTML; " >Some text 32</td>
-  <td>Some text 33</td>
+  <td id="td31" onClick="this.style.display='none';">31</td>
+  <td id="td32" onMouseOver="document.getElementById('div1').innerHTML = this.innerHTML; " >32</td>
+  <td id="td33" onClick="this.style.display='none';">33</td>
  </tr>
 </table>
 
