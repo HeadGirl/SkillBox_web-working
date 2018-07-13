@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lesson 6_13_07_18</title>
+<style type="text/css">
+.t1 td {
+        border: 1px solid black;
+       }  
+.d1 {
+     border: 1px solid orange;
+     box-shadow: 8px 8px 8px orange;
+     background-color: yellow;
+    }
+</style>
+
+</head>
+
+<body>
+
+<table>
+ <tr>
+  <td><input type=button value="Button 11"></td>
+  <td><input type=button value="Button 12"></td>
+  <td><input type=button value="Button 13"></td>
+ </tr>
+ <tr>
+  <td><input type=button value="Button 21"></td>
+  <td onClick="document.getElementById('td22').style.display='inline';"><input type=button value="Button 22"></td>
+  <td><input type=button value="Button 23"></td>
+ </tr>
+ <tr>
+  <td><input type=button value="Button 31"></td>
+  <td><input type=button value="Button 32"></td>
+  <td><input type=button value="Button 33"></td>
+ </tr>
+</table>
+<br>
+<br>
+<table class="t1">
+ <tr>
+  <td id="td11"  >Some text 11</td>
+  <td>Some text 12</td>
+  <td>Some text 13</td>
+ </tr>
+ <tr>
+  <td>Some text 21</td>
+  <td id="td22" onClick="this.style.display='none';">Some text 22</td>
+  <td>Some text 23</td>
+ </tr>
+ <tr>
+  <td>Some text 31</td>
+  <td id="td32" onMouseOver="document.getElementById('div1').innerHTML = this.innerHTML; " >Some text 32</td>
+  <td>Some text 33</td>
+ </tr>
+</table>
+
+<br>
+<br>
+<div id="div1" class="d1" >This is some text in div</div>
+
+<br>
+<br>
+<input id="text1" type=text>
+<input id="but1" onClick="document.getElementById('td11').innerHTML = document.getElementById('td11').innerHTML + document.getElementById('text1').value ; " type=button value="Click here" >
+
+</body>
+</html>
