@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Lesson 9_17_07_18</title>
+<style type="text/css">
+.d1 {
+     border: 1px solid orange;
+     background-color: yellow;
+    }
+.d2 {
+     border: 1px solid green;
+     background-color: blue;
+    }
+</style>
+
+ <script>
+ //При нажатии кнопки 'p', цвет экрана изменится на сиреневый
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 80)
+      document.body.style.background = "purple";
+  });
+  //При нажатии кнопки 'w', цвет экрана изменится на белый
+  addEventListener("keydown", function(event) {
+    if (event.keyCode == 87)
+      document.body.style.background = "white";
+  });
+
+  var timerId;
+  function setTimerOut() {
+    timerId = setTimeout("document.getElementById('div6').style.background = 'red'", 2000);
+                         };
+  function clearTimerOut() {
+                          clearTimeout(timerId);
+                          };
+
+  var $click=0;
+  var $keyup=0;
+  var $keydown=0;
+  var $keypress=0;
+  var $change=0;
+  var $focus=0;
+  var $blur=0;
+
+  function ShowAll()
+  {
+   document.getElementById('div4').innerHTML='click: '+$click+'<br>' + 'keydown: '+$keydown+'<br>' + 'keyup: '+$keyup+'<br>' + 'keypress: '+$keypress+'<br>'+ 'change: '+$change+'<br>' + 'focus: '+$focus+'<br>' + 'blur: '+$blur+'<br>';
+  }
+  function my_click() { $click++; ShowAll();}
+  function my_keyup() {$keyup++;ShowAll();}
+  function my_change() {$change++;ShowAll();}
+  function my_focus() {$focus++;ShowAll();}
+  function my_blur() {$blur++;ShowAll();}
+  function my_keydown() {$keydown++;ShowAll();}
+  function my_keypress() {$keypress++; ShowAll();}
+
+  function replace_A() {
+    document.getElementById('div5').innerHTML = document.getElementById('text3').value;
+    document.getElementById('div5').innerHTML = document.getElementById('div5').innerHTML.replace(/a/g, 'A');
+  }
+
+  //setInterval
+  function freezing() {
+                        var but_freez = document.getElementById('but2');
+                        var time = 5;
+                        but_freez.disabled = true;
+                        but_freez.value = 'Разморозится через ' + time;
+                        var interval_id = setInterval(function () { /* запуск таймера */
+                                          time--;
+                                          if (time != 0) {
+                                              but_freez.value = 'Разморозится через ' + time;
+                                            } else {
+                                                clearInterval(interval_id);  /* остановка таймера */
+                                                but_freez.disabled = false;
+                                                but_freez.value = 'Заморозить на 5 секунд';
+                                                     }
+                                                                            }, 1000);
+                      };
+ 
+ </script>
+
+</head>
+
+<body>
+<div id="div1" class="d1">This is some text in div</div> <br>
+<div id="div2" class="d2">This is some text in div</div> <br>
+<div id="div3" class="d1" onClick="my_click(event);" onKeyUp="my_keyup();" onKeyDown="my_keydown();" onKeyPress="my_keypress(event);" onChange="my_change();">
+«Полюбить кого-то – это все равно как поселиться в новом доме, – говорила Соня. – Сперва тебе нравится, все-то в нем новое, и каждое утро себе удивляешься: да неужто это все мое? Все боишься: ну ворвется кто да закричит: дескать, произошло страшное недоразумение, никто не собирался селить вас в такие хоромы. Но годы идут, фасад ветшает, одна трещинка пошла, другая. И ты начинаешь любить дом уже не за достоинства, а скорее за недостатки. С закрытыми глазами помнишь все его углы и закутки. Умеешь так хитро повернуть ключ, чтоб не заело замок и дом впустил тебя с мороза. Знаешь, какие половицы прогибаются под ногами. Как открыть платяной шкаф, чтоб не скрипнули дверцы. Из таких вот маленьких секретов и тайн и складывается твой дом». 
+<br> <br>
+Вы согласны с этим мнением? <br>
+<input id="text2" type="text" onFocus="my_focus();" onBlur="my_blur();">
+<input id="but1" type="button" value="Click here to sent">
+</div> <br>
+<div id="div4" class="d2"> this is some text</div>
+<br>
+<input id="text3" type="text" onKeyUp = "replace_A()">
+<br>
+<br>
+<div id="div5" class="d1" onmouseover="clearTimerOut()"> this is some text</div>
+</div>
+<br>
+<div id="div6" class="d2" onmouseover="setTimerOut()"> this is some text</div>
+</div>
+<br>
+<br>
+<input id="but2" type="button" value="Заморозить" onClick="freezing()" >
+</body></html>
